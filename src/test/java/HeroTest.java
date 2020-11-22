@@ -43,4 +43,12 @@ public class HeroTest {
         String mpower = "high";
         assertEquals(mpower, hero.getPower());
     }
+
+    //get expected Id
+    @Test
+    public void getId_HeroObject_int() {
+        Hero hero = new Hero("belyse",20,"high","high");
+        Hero.clear();
+        assertEquals(1, hero.getId());
+    }
 }
