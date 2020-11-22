@@ -8,7 +8,7 @@ public class HeroTest {
     @Test
     public void NewHeroObjectGetsCorrectlyCreated_true()
     {
-        Hero hero = new Hero("belyse",20,"modern","modern");
+        Hero hero = new Hero("belyse",20,"high","high");
         assertEquals(true, hero instanceof Hero);
     }
 }
