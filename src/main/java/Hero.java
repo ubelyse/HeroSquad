@@ -4,7 +4,7 @@ import java.util.List;
 public class Hero {
 
     private String myname;
-    private int age;
+    private int myage;
     private String power;
     private String weakness;
     private int Id;
@@ -13,7 +13,7 @@ public class Hero {
 
     public Hero(String name,int age,String power,String weakness ) {
         myname = name;
-        age = age;
+        myage = age;
         power = power;
         weakness = weakness;
         myHero.add(this);
@@ -22,6 +22,10 @@ public class Hero {
 
     public String getName() {
         return myname;
+    }
+
+    public int getAge() {
+        return myage;
     }
 
 }
