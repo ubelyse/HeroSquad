@@ -27,4 +27,12 @@ public class HeroTest {
         int mage = 20;
         assertEquals(mage, hero.getAge());
     }
+
+    //get expected weakness
+    @Test
+    public void getWeakness_HeroObject_String() {
+        Hero hero = new Hero("belyse",20,"high","high");
+        String mweakness = "high";
+        assertEquals(mweakness, hero.getWeakness());
+    }
 }
