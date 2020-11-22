@@ -16,8 +16,8 @@ public class HeroTest {
     @Test
     public void getName_HeroObject_String() {
         Hero hero = new Hero("belyse",20,"high","high");
-        String mname = "Vick";
-        assertEquals(mname, hero.getName());
+        String name = "belyse";
+        assertEquals(name, hero.getName());
     }
 
 }

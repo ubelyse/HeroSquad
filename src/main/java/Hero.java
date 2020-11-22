@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Hero {
 
-    private String name;
+    private String myname;
     private int age;
     private String power;
     private String weakness;
@@ -12,12 +12,16 @@ public class Hero {
     private static List<Hero> myHero =new ArrayList<>();
 
     public Hero(String name,int age,String power,String weakness ) {
-        name = name;
+        myname = name;
         age = age;
         power = power;
         weakness = weakness;
         myHero.add(this);
         Id = myHero.size();
+    }
+
+    public String getName() {
+        return myname;
     }
 
 }
