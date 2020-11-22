@@ -47,8 +47,8 @@ public class HeroTest {
     //get expected Id
     @Test
     public void getId_HeroObject_int() {
-        Hero hero = new Hero("belyse",20,"high","high");
         Hero.clear();
+        Hero hero = new Hero("belyse",20,"high","high");
         assertEquals(1, hero.getId());
     }
 }

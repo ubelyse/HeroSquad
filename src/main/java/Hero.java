@@ -44,4 +44,12 @@ public class Hero {
         myHero.clear();
     }
 
+    public static List<Hero> all() {
+        return myHero;
+    }
+
+
+    public static Hero find(int id) {
+        return myHero.get(id - 1);
+    }
 }
