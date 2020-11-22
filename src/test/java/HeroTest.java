@@ -20,4 +20,11 @@ public class HeroTest {
         assertEquals(name, hero.getName());
     }
 
+    //get expected output of the age
+    @Test
+    public void getAge_HeroObject_String() {
+        Hero hero = new Hero("belyse",20,"high","high");
+        int mage = 20;
+        assertEquals(mage, hero.getAge());
+    }
 }
