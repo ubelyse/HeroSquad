@@ -35,4 +35,12 @@ public class HeroTest {
         String mweakness = "high";
         assertEquals(mweakness, hero.getWeakness());
     }
+
+    //get expected power
+    @Test
+    public void getPower_HeroObject_String() {
+        Hero hero = new Hero("belyse",20,"high","high");
+        String mpower = "high";
+        assertEquals(mpower, hero.getPower());
+    }
 }
