@@ -5,7 +5,7 @@ public class Hero {
 
     private String myname;
     private int myage;
-    private String power;
+    private String mypower;
     private String myweakness;
     private int Id;
 
@@ -14,7 +14,7 @@ public class Hero {
     public Hero(String name,int age,String power,String weakness ) {
         myname = name;
         myage = age;
-        power = power;
+        mypower = power;
         myweakness = weakness;
         myHero.add(this);
         Id = myHero.size();
@@ -32,4 +32,7 @@ public class Hero {
         return myweakness;
     }
 
+    public String getPower() {
+        return mypower;
+    }
 }
