@@ -6,7 +6,7 @@ public class Hero {
     private String myname;
     private int myage;
     private String power;
-    private String weakness;
+    private String myweakness;
     private int Id;
 
     private static List<Hero> myHero =new ArrayList<>();
@@ -15,7 +15,7 @@ public class Hero {
         myname = name;
         myage = age;
         power = power;
-        weakness = weakness;
+        myweakness = weakness;
         myHero.add(this);
         Id = myHero.size();
     }
@@ -26,6 +26,10 @@ public class Hero {
 
     public int getAge() {
         return myage;
+    }
+
+    public String getWeakness() {
+        return myweakness;
     }
 
 }
