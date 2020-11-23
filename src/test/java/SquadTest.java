@@ -16,6 +16,6 @@ public class SquadTest {
     @Test
     public void getName_SquadObject_String() {
         Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
-        assertEquals("club", squad.getName());
+        assertEquals("club", squad.getMyName());
     }
 }

@@ -18,4 +18,8 @@ public class Squad {
         myId=instances.size();
         myHero= new ArrayList<Hero>();
     }
+
+    public String getMyName() {
+        return myName;
+    }
 }
