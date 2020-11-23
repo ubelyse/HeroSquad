@@ -30,4 +30,9 @@ public class Squad {
     public String getmCause() {
         return mCause;
     }
+
+    public static List<Squad> all() {
+
+        return instances;
+    }
 }

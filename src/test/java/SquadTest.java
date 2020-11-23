@@ -26,9 +26,19 @@ public class SquadTest {
         assertEquals(5, squad.getMySize());
     }
 
+    //get cause
     @Test
     public void getCause_SquadObject_String() {
         Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
         assertEquals("passive-aggressive post-it notes", squad.getmCause());
+    }
+
+    //return all squad
+    @Test
+    public void all_returnsAllSquadObject_true() {
+        Squad firstsquad = new Squad("club",5,"passive-aggressive post-it notes");
+        Squad secondsquad = new Squad("Geeks", 4, "computer literacy");
+        assertEquals(true, Squad.all().contains(firstsquad));
+        assertEquals(true, Squad.all().contains(secondsquad));
     }
 }
