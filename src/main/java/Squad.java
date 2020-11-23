@@ -22,4 +22,12 @@ public class Squad {
     public String getMyName() {
         return myName;
     }
+
+    public int getMySize() {
+        return mySize;
+    }
+
+    public String getmCause() {
+        return mCause;
+    }
 }

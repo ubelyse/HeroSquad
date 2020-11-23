@@ -18,4 +18,11 @@ public class SquadTest {
         Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
         assertEquals("club", squad.getMyName());
     }
+
+    //get the size
+    @Test
+    public void getSize_squadInstantiatesWithSize_int() {
+        Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
+        assertEquals(5, squad.getMySize());
+    }
 }
