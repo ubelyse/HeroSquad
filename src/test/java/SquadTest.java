@@ -12,4 +12,10 @@ public class SquadTest {
         assertEquals(true, squad instanceof Squad);
     }
 
+    //get the name expected
+    @Test
+    public void getName_SquadObject_String() {
+        Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
+        assertEquals("club", squad.getName());
+    }
 }
