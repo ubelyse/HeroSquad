@@ -19,6 +19,14 @@ public class SquadTest {
         assertEquals("club", squad.getMyName());
     }
 
+    //get Id
+    @Test
+    public void getId_SquadObject_1() {
+        Squad.clear();
+        Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
+        assertEquals(1, squad.getMyId());
+    }
+
     //get the size
     @Test
     public void getSize_SquadObject_int() {
@@ -44,9 +52,11 @@ public class SquadTest {
 
     //clear
     @Test
-    public void clear_emptiesAllSquadsFromList_0() {
+    public void clear_squadObject_0() {
         Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
         Squad.clear();
         assertEquals(Squad.all().size(), 0);
     }
+
+
 }

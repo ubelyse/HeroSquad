@@ -23,6 +23,10 @@ public class Squad {
         return myName;
     }
 
+    public int getMyId() {
+        return myId;
+    }
+
     public int getMySize() {
         return mySize;
     }
