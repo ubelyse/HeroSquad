@@ -59,6 +59,14 @@ public class SquadTest {
         assertEquals(true, Squad.all().contains(secondsquad));
     }
 
+    //empty list
+    @Test
+    public void getHeroes_initiallyReturnsEmptyList_ArrayList() {
+        Squad.clear();
+        Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
+        assertEquals(0, squad.getHero().size());
+    }
+
     //clear
     @Test
     public void clear_squadObject_0() {

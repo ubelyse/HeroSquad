@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SquadTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-23T07:59:10" hostname="wecode-VivoBook-15-ASUS-Laptop-X540UAR" time="0.001">
+<testsuite name="SquadTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-23T08:01:57" hostname="wecode-VivoBook-15-ASUS-Laptop-X540UAR" time="0.001">
   <properties/>
-  <testcase name="sameId_SquadWithSameId_secondSquad" classname="SquadTest" time="0.001"/>
+  <testcase name="clear_squadObject_0" classname="SquadTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

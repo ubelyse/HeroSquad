@@ -46,4 +46,10 @@ public class Squad {
     public static void clear() {
         instances.clear();
     }
+
+    public List<Hero> getHero() {
+
+        return myHero;
+    }
+
 }
