@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SquadTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-23T08:06:25" hostname="wecode-VivoBook-15-ASUS-Laptop-X540UAR" time="0.002">
+<testsuite name="SquadTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2020-11-23T08:12:45" hostname="wecode-VivoBook-15-ASUS-Laptop-X540UAR" time="0.004">
   <properties/>
-  <testcase name="addHero_addNewHero_true" classname="SquadTest" time="0.002"/>
+  <testcase name="getHeroes_initiallyReturnsEmptyList_ArrayList" classname="SquadTest" time="0.001"/>
+  <testcase name="getCause_SquadObject_String" classname="SquadTest" time="0.0"/>
+  <testcase name="getName_SquadObject_String" classname="SquadTest" time="0.0"/>
+  <testcase name="all_returnsAllSquadObject_true" classname="SquadTest" time="0.0"/>
+  <testcase name="clear_squadObject_0" classname="SquadTest" time="0.0"/>
+  <testcase name="NewSquadObjectGetsCorrectlyCreated_true" classname="SquadTest" time="0.001"/>
+  <testcase name="getSize_SquadObject_int" classname="SquadTest" time="0.0"/>
+  <testcase name="heroExists_HeroExistsinSquads_true" classname="SquadTest" time="0.0"/>
+  <testcase name="sameId_SquadWithSameId_secondSquad" classname="SquadTest" time="0.0"/>
+  <testcase name="addHero_addNewHero_true" classname="SquadTest" time="0.0"/>
+  <testcase name="getId_SquadObject_1" classname="SquadTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

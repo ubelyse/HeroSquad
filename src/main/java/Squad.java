@@ -47,6 +47,18 @@ public class Squad {
         instances.clear();
     }
 
+    public static boolean heroexist(Hero myhero) {
+        boolean exists = false;
+        for (Squad squad : instances) {
+            for (Hero hero : squad.getHero()) {
+                if (hero.getName().equals(myhero.getName())) {
+                    exists = true;
+                }
+            }
+        }
+        return exists;
+    }
+
     public List<Hero> getHero() {
         return myHero;
     }

@@ -50,6 +50,17 @@ public class SquadTest {
         assertEquals(Squad.find(secondsquad.getMyId()), secondsquad);
     }
 
+    //hero exist
+    @Test
+    public void heroExists_HeroExistsinSquads_true() {
+        Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
+        Hero hero = new Hero("belyse",20,"high","high");
+        squad.addHero(hero);
+        assertTrue(squad.heroexist(hero));
+
+
+    }
+
     //return all squad
     @Test
     public void all_returnsAllSquadObject_true() {
