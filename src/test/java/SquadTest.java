@@ -21,8 +21,14 @@ public class SquadTest {
 
     //get the size
     @Test
-    public void getSize_squadInstantiatesWithSize_int() {
+    public void getSize_SquadObject_int() {
         Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
         assertEquals(5, squad.getMySize());
+    }
+
+    @Test
+    public void getCause_SquadObject_String() {
+        Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
+        assertEquals("passive-aggressive post-it notes", squad.getmCause());
     }
 }
