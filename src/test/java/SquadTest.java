@@ -1,10 +1,12 @@
+import models.Hero;
+import models.Squad;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class SquadTest {
 
-    //Instializing new Squad Object
+    //Instializing new models.Squad Object
     @Test
     public void NewSquadObjectGetsCorrectlyCreated_true()
     {

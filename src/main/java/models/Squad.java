@@ -1,3 +1,5 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +19,10 @@ public class Squad {
         instances.add(this);
         myId=instances.size();
         myHero= new ArrayList<Hero>();
+    }
+
+    public void setMyId(int myId) {
+        this.myId = myId;
     }
 
     public String getMyName() {

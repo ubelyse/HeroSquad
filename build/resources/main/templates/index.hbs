@@ -1,0 +1,14 @@
+{{#partial "content"}}
+
+    <h1> List o' stuff to do!</h1>
+
+    {{#if hero}}
+        {{#each hero }}
+            <p><a href="/squad/{{squadId}}/tasks/{{id}}">{{name}}</a></p>
+        {{/each}}
+    {{else}}
+        <p>No hero!</p>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}

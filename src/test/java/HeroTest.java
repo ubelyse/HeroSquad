@@ -1,10 +1,11 @@
+import models.Hero;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class HeroTest {
 
-    //Instializing new Hero Object
+    //Instializing new models.Hero Object
     @Test
     public void NewHeroObjectGetsCorrectlyCreated_true()
     {
