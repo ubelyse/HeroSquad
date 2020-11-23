@@ -75,5 +75,13 @@ public class SquadTest {
         assertEquals(Squad.all().size(), 0);
     }
 
+    //add new hero
+    @Test
+    public void addHero_addNewHero_true() {
+        Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
+        Hero hero = new Hero("belyse",20,"high","high");
+        squad.addHero(hero);
+        assertTrue(squad.getHero().contains(hero));
+    }
 
 }

@@ -48,8 +48,11 @@ public class Squad {
     }
 
     public List<Hero> getHero() {
-
         return myHero;
+    }
+
+    public void addHero(Hero hero) {
+        myHero.add(hero);
     }
 
 }
