@@ -9,7 +9,7 @@ public class SquadTest {
     public void NewSquadObjectGetsCorrectlyCreated_true()
     {
         Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
-        assertEquals(true, squad instanceof Hero);
+        assertEquals(true, squad instanceof Squad);
     }
 
 }
