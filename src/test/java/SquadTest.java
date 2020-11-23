@@ -41,4 +41,12 @@ public class SquadTest {
         assertEquals(true, Squad.all().contains(firstsquad));
         assertEquals(true, Squad.all().contains(secondsquad));
     }
+
+    //clear
+    @Test
+    public void clear_emptiesAllSquadsFromList_0() {
+        Squad squad = new Squad("club",5,"passive-aggressive post-it notes");
+        Squad.clear();
+        assertEquals(Squad.all().size(), 0);
+    }
 }
