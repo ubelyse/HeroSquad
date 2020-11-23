@@ -41,6 +41,15 @@ public class SquadTest {
         assertEquals("passive-aggressive post-it notes", squad.getmCause());
     }
 
+    //testing squad with same id
+    @Test
+    public void sameId_SquadWithSameId_secondSquad() {
+        Squad.clear();
+        Squad firstsquad = new Squad("club",5,"passive-aggressive post-it notes");
+        Squad secondsquad = new Squad("Geeks", 4, "computer literacy");
+        assertEquals(Squad.find(secondsquad.getMyId()), secondsquad);
+    }
+
     //return all squad
     @Test
     public void all_returnsAllSquadObject_true() {

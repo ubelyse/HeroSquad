@@ -35,6 +35,10 @@ public class Squad {
         return mCause;
     }
 
+    public static Squad find(int id) {
+        return instances.get(id - 1);
+    }
+
     public static List<Squad> all() {
         return instances;
     }
