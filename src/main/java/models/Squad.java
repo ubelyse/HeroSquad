@@ -1,69 +1,70 @@
 package models;
 
 
-
-import java.util.ArrayList;
-
-
-
+import java.util.Objects;
 
 public class Squad {
+    private String squadName;
+    private String cause;
+    private int id;
+    private int max_size;
 
-    private String myname;
-    private int mysize;
-    private String mycause;
-    private int sqid;
-    private ArrayList<Hero>  squadHero = new ArrayList<>();
-    private static ArrayList<Squad> mysquad = new ArrayList<>();
-
-    public Squad(String myname, int mysize, String mycause) {
-        this.myname = myname;
-        this.mysize = mysize;
-        this.mycause = mycause;
-
-        this.squadHero = new ArrayList<>();
-        mysquad.add(this);
-        this.sqid = mysquad.size();
+    public Squad(String squadName, String cause, int max_size){
+        this.squadName = squadName;
+        this.cause = cause;
+        this.max_size = max_size;
     }
 
-    public String getMyname() {
-        return myname;
+    public String getSquadName(){
+        return squadName;
     }
 
-    public int getMysize() {
-        return mysize;
+    public String getCause(){
+        return cause;
     }
 
-    public String getMycause() {
-        return mycause;
+    public int getMax_size() {return max_size;}
+
+    public int getId(){
+        return id;
     }
 
-    public int getSquadId() {
-        return sqid;
+    public void setSquadName(String squadName){
+        this.squadName = squadName;
     }
 
-    public static Squad findBySquadId(int id) {
-        return mysquad.get(id - 1);
+    public void setMax_size(int max_size){
+        this.max_size = max_size;
     }
 
-    public static ArrayList<Squad> getInstances() {
-        return mysquad;
+    public void setCause(String cause){
+        this.cause = cause;
     }
 
-    public ArrayList<Hero> getSquadHero() {
-        return squadHero;
+    public void setId(int id){
+        this.id = id;
     }
 
-    public void setSquadHero(Hero newMember) {
-        squadHero.add(newMember);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Squad squad = (Squad) o;
+
+        if (id != squad.id) return false;
+        if (max_size != squad.max_size) return false;
+        if (!Objects.equals(squadName, squad.squadName)) return false;
+        return Objects.equals(cause, squad.cause);
     }
 
-    public static void clearAllSquads() {
-        mysquad.clear();
-    }
-
-    public void clearAllSquadHero() {
-        getSquadHero().clear();
+    @Override
+    public int hashCode() {
+        int result = squadName != null ? squadName.hashCode() : 0;
+        result = 31 * result + (cause != null ? cause.hashCode() : 0);
+        result = 31 * result + id;
+        result = 31 * result + max_size;
+        return result;
     }
 
 }

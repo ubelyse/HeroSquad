@@ -10,7 +10,7 @@ public class HeroTest {
 
     //Testing the Whole Class
     @Test
-    public void NewHeroCorrectlyCreated_true() throws Exception {
+    public void HeroCorrectlyCreated_true() throws Exception {
         Hero hero = setUpNewHero();
         assertEquals(true, hero instanceof Hero);
     }
