@@ -7,7 +7,7 @@ public class Squad {
     private String myname;
     private int mysize;
     private String mycause;
-    private int id;
+    private int sqid;
     private ArrayList<Hero>  squadHero = new ArrayList<>();
     private static ArrayList<Squad> mysquad = new ArrayList<>();
 
@@ -18,7 +18,7 @@ public class Squad {
 
         this.squadHero = new ArrayList<>();
         mysquad.add(this);
-        this.id = mysquad.size();
+        this.sqid = mysquad.size();
     }
 
     public String getMyname() {
@@ -34,7 +34,7 @@ public class Squad {
     }
 
     public int getSquadId() {
-        return id;
+        return sqid;
     }
 
     public static Squad findBySquadId(int id) {

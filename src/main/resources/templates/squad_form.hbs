@@ -1,27 +1,21 @@
 {{#partial "content"}}
-    {{#if editSquad}}
-        <h1>Edit this models.Squad!</h1>
-        <form action="/suqad/{{squad.id}}" method="post">
-            <label for="name">Edit this squad's name</label>
-            <input id="newSquadname" name="newSquadname" type="text" value="{{squad.name}}">
-            <label for="size"> Enter the models.Squad Size</label>
-            <input id="newSquadsize" name="newSquadsize" type="number" value=" {{squad.size}} ">
-            <label for="cause">Enter models.Squad Cause</label>
-            <input for="newSquadcause" name="new Squadcause" type="text" value="{{squad.cause}}">
-            <button type="submit" class="btn btn-default">models.Squad</button>
+    <section class="landing">
+        <form class="form" action="/squad/new" method="post">
+            <h1>Create Your Squad</h1>
+            <div class="form-group">
+                <label>Enter-Squad name</label>
+                <input type="text" placeholder="" name="squadName" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Enter-Maximum-size</label>
+                <input type="number" placeholder="" name="size"  class="form-control"  required>
+            </div>
+            <div class="form-group">
+                <label>Enter-Mission</label>
+                <input type="text" placeholder="" name="cause"  class="form-control"  required>
+            </div>
+            <input type="submit" class="btns">
         </form>
-    {{else}}
-        <h1>Add a new models.Squad!</h1>
-        <form action="/squad" method="post">
-            <label for="name">models.Squad Name</label>
-            <input id="newSquadname" name="newSquadname" type="text">
-            <label for="size">models.Squad Size</label>
-            <input id="newSquadsize" name="newSquadsize" type="number">
-            <label for="cause">models.Squad Cause</label>
-            <input id="newSquadcause" name="newSquadcause" type="text">
-            <button type="submit" class="btn btn-default"> Add models.Squad</button>
-        </form>
-    {{/if}}
+    </section>
 {{/partial}}
-
 {{> layout.hbs}}

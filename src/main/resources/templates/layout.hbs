@@ -1,30 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/app.css">
-    <title>models.Hero models.Squad</title>
-</head>
-
+<!DOCTYPE html><html lang="en">
+{{#block "header"}}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+        <title>Hero</title>
+    </head>
+{{/block}}
 <body>
-<section id="content">
-    <div id="left">
-        <h1 class="web-title">HERO SQUAD</h1>
-        <p>“I will fight for those who cannot fight for themselves.”</p>
+<nav class="navbar navbar-expand-lg" style="background-color:rgb(230, 230, 230);">
+    <a class="nav-item nav-link" href="success" style="color:rgb(128, 128, 255);"><b>HERO'S SQUAD</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav float-right mr-4">
+            <a  class="nav-item nav-link" href="/hero"style="color:rgb(128, 128, 255);font-size:18px;"><em>Hero</em></a>
+            <a class="nav-item nav-link" href="/squad" style="color:rgb(128, 128, 255);font-size:18px;">Squad</a>
+        </div>
     </div>
-
-    <div id="right" >
-
-        #parse( $template )
-    </div>
-
-</section>
+</nav>
+{{#block "content"}}
+{{/block}}{{#block "footer"}}
+{{/block}}
+<script src="/js/jquery-3.4.0.min.js">
+</script>
+<script src="/js/script.js">
+</script>
 </body>
-
 </html>

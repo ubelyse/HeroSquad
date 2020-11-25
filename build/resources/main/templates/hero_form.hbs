@@ -1,55 +1,25 @@
 {{#partial "content"}}
-    {{#if edithero}}
-        <h1>Edit this hero!</h1>
-        <form action="/hero/{{hero.id}}" method="post">
-            <br>
-            <label for="name">Edit this hero's name</label>
-            <input id="heroname" name="heroname" type="text" value="{{hero.name}}">
-            <label for="age">Edit this hero's age</label>
-            <input id="heroage" name="heroage" type="number" value="{{hero.age}}">
-            <label for="specialpower">Edit this hero's special power</label>
-            <input id="herospecialpower" name="herospecialpower" type="text" value="{{hero.power}}">
-            <label for="weakness">Edit this hero's weakness</label>
-            <input id="heroweakness" name="heroweakness" type="text" value="{{hero.weakness}}">
-            <br>
-            <label for="squadId">Update this task's models.Squad:</label>
-            <select id="squadId" name="squadId">
-                {{#each squad}}
-                    <option value="{{id}}">{{name}}</option>
-                {{/each}}
-            </select>
-            <p>Don't see the right squad?<a href="/squad/new">Add a new one first.</a></p>
-            <button type="submit" class="btn btn-default">Add models.Squad</button>
+    <section class="landing">
+        <form class="form" action="/new/hero" method="post">
+            <h1>Create Your Hero</h1>
+            <div class="form-group">
+                <label>Hero's name</label>
+                <input type="text" placeholder="" name="name" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Hero's age</label>
+                <input type="number" placeholder="" name="age" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Hero's Special_power</label>
+                <input type="text" placeholder="" name="power" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Hero's weakness</label>
+                <input type="text" placeholder="" name="weakness" required class="form-control">
+            </div>
+            <input class="btns" type="submit">
         </form>
-    {{else}}
-        <h2>Add a new hero!</h2>
-        <form action="/hero" method="post">
-            {{#if squad}}
-                <label for="name">hero's name</label>
-                <input id="heroname" name="heroname" type="text">
-
-                <label for="age">hero's age</label>
-                <input id="heroage" name="heroage" type="number">
-
-                <label for="specialpower">hero's power</label>
-                <input id="heropower" name="heropower" type="text">
-
-                <label for="weakness">hero's weakness</label>
-                <input id="heroweakness" name="heroweakness" type="text">
-
-                <label for="squadId">Categorize this hero as:</label>
-                <select id="squadId" name="squadId">
-                    {{#each models.Squad}}
-                        <option value="{{id}}">{{name}}</option>
-                    {{/each}}
-                </select>
-                <p>Don't see the right category?<a href="/squad/new">Add a new one first.</a></p>
-            {{else}}
-                <h3> You'll need to add a category before you add a task. <a href="/squad/new">Add one here.</a> </h3>
-            {{/if}}
-            <button type="submit" class="btn btn-default">Go!</button>
-        </form>
-    {{/if}}
+    </section>
 {{/partial}}
-
 {{> layout.hbs}}
