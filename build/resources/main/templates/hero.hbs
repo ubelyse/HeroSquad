@@ -1,7 +1,8 @@
 {{#partial "content"}}
     <section style="background-color:rgb(217, 217, 217);">
+
         <div class="row">
-            <h2 style="text-align:center;"class="h2cla"> <a class="btns" href="/hero_form" >Create Your Hero</a><br><br> CURRENT HEROES</h2>
+            <h2 style="text-align:center;"class="h2cla"><a class="btns" href="/hero_form">Create Your Hero</a><br><br> CURRENT HEROES</h2>
         </div>
         <div class="row" >
             {{#each hero}}
@@ -9,7 +10,7 @@
                     <div class="card m-2">
                         <p>Name: {{ myname }} </p>
                         <p>Age: {{ myage }}</p>
-                        <p>Hero's power: {{ mypower }}</p>
+                        <p>Hero's power: {{ mypower }} </p>
                         <p>Hero's Weakness: {{ myweakness }}</p>
                         <p>Id: {{ id }}</p>
                         <a href="/squad" class="btns">Add {{ myname }} To Squad</a>
