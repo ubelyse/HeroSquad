@@ -22,14 +22,6 @@ Belyse Inema
 ## Known Bugs
 no bugs yet
 
-## B.D.D
-
-
-|behaviour   | input  |  output |   |
-|---|---|---|---|
-| hero text|input any string|  | displays the heroes text  |
-| squad  string| input string | displays the squad group text  
-
 ## Licence
 MIT License
 
