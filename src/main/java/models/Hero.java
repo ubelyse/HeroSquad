@@ -2,7 +2,6 @@ package models;
 
 import java.util.ArrayList;
 
-
 public class Hero {
 
 
@@ -62,6 +61,7 @@ public class Hero {
     public int getId(){
         return id;
     }
+
     public static Hero findById(int id) {
         return myhero.get(id-1);
     }

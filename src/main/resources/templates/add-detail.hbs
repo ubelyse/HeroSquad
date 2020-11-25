@@ -4,17 +4,18 @@
             <div class="row">
                 <div class="col-6">
                     <h3>Your hero:</h3>
-                    <p> Name:{{name}}</p>
-                    <p> Age:{{age}}</p>
-                    <p>Power:{{power}}</p>
-                    <p>Weakness:{{weakness}}</p>
+                    <p> Name:{{myname}}</p>
+                    <p> Age:{{myage}}</p>
+                    <p>Power:{{mypower}}</p>
+                    <p>Weakness:{{myweakness}}</p>
                     <p>SquadId: {{squadId}}</p>
                 </div>
+
                 <div class="col-6">
                     <h3>Your squad:</h3>
-                    <p>Size:{{size}}</p>
-                    <p>Squad:{{squad}}</p>
-                    <p>Squad Mission:{{cause}}</p>
+                    <p>Squad:{{Squad.mysquadname}}</p>
+                    <p>Size:{{mysize}}</p>
+                    <p>Squad cause:{{mycause}}</p>
                 </div>
             </div>
         {{/each}}

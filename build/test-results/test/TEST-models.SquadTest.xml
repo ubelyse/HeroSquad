@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="models.SquadTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-25T18:04:31" hostname="wecode-VivoBook-15-ASUS-Laptop-X540UAR" time="0.002">
+<testsuite name="models.SquadTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-11-25T19:03:25" hostname="wecode-VivoBook-15-ASUS-Laptop-X540UAR" time="0.003">
   <properties/>
-  <testcase name="Hero_addsHeroToSquad_Hero" classname="models.SquadTest" time="0.002"/>
+  <testcase name="mission_Is_Correct" classname="models.SquadTest" time="0.001"/>
+  <testcase name="correct_size" classname="models.SquadTest" time="0.0"/>
+  <testcase name="clear_All" classname="models.SquadTest" time="0.0"/>
+  <testcase name="get_All_List" classname="models.SquadTest" time="0.0"/>
+  <testcase name="Instance" classname="models.SquadTest" time="0.0"/>
+  <testcase name="finding_The_Id" classname="models.SquadTest" time="0.0"/>
+  <testcase name="squad_Is_Correct" classname="models.SquadTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

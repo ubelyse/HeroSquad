@@ -9,61 +9,38 @@ import java.util.ArrayList;
 
 public class Squad {
 
-    private String myname;
+    private String mysquadname;
     private int mysize;
     private String mycause;
     private int sqid;
-    private ArrayList<Hero>  squadHero = new ArrayList<>();
-    private static ArrayList<Squad> mysquad = new ArrayList<>();
+    private static ArrayList<Squad> squads =new ArrayList<>();
 
-    public Squad(String myname, int mysize, String mycause) {
-        this.myname = myname;
+    public Squad(String mysquadname, int mysize, String mycause) {
+        this.mysquadname = mysquadname;
         this.mysize = mysize;
         this.mycause = mycause;
 
-        this.squadHero = new ArrayList<>();
-        mysquad.add(this);
-        this.sqid = mysquad.size();
+        squads.add(this);
+        this.sqid = squads.size();
     }
 
-    public String getMyname() {
-        return myname;
-    }
-
-    public int getMysize() {
+    public int getMysize(){
         return mysize;
     }
-
-    public String getMycause() {
+    public String getMysquadname(){
+        return mysquadname;
+    }
+    public String getMycause(){
         return mycause;
     }
-
-    public int getSquadId() {
+    public static ArrayList<Squad>getAll(){
+        return squads;
+    }
+    public static void clear() {
+        squads.clear();
+    }
+    public int findid(){
         return sqid;
-    }
-
-    public static Squad findBySquadId(int id) {
-        return mysquad.get(id - 1);
-    }
-
-    public static ArrayList<Squad> getInstances() {
-        return mysquad;
-    }
-
-    public ArrayList<Hero> getSquadHero() {
-        return squadHero;
-    }
-
-    public void setSquadHero(Hero newMember) {
-        squadHero.add(newMember);
-    }
-
-    public static void clearAllSquads() {
-        mysquad.clear();
-    }
-
-    public void clearAllSquadHero() {
-        getSquadHero().clear();
     }
 
 }
