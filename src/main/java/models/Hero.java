@@ -15,12 +15,11 @@ public class Hero {
 
     private int squadId;
 
-    public Hero(String myname, int myage, String mypower, String myweakness, int SquadId) {
+    public Hero(String myname, int myage, String mypower, String myweakness) {
         this.myname = myname;
         this.myage = myage;
         this.mypower = mypower;
         this.myweakness = myweakness;
-        this.squadId=SquadId;
 
 
         myhero.add(this);

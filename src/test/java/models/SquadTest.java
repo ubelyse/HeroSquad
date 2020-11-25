@@ -20,7 +20,7 @@ public class SquadTest {
     @Test
     public void  squad_Is_Correct(){
         Squad mySquad = new Squad("keepers",5,"protect");
-        assertEquals("keepers",mySquad.getMysquadname());
+        assertEquals("keepers",mySquad.getMyname());
     }
     @Test
     public void mission_Is_Correct(){
@@ -31,17 +31,17 @@ public class SquadTest {
     public void get_All_List(){
         Squad mySquad = new Squad("keepers",5,"protect");
         Squad secondSquad= new Squad("keepers",5,"protect");
-        assertTrue(Squad.getAll().contains(mySquad));
-        assertTrue(Squad.getAll().contains(secondSquad));
+        assertTrue(Squad.getInstances().contains(mySquad));
+        assertTrue(Squad.getInstances().contains(secondSquad));
     }
     @Test
     public void  finding_The_Id(){
-        Squad.clear();
+        Squad.clearAllSquads();
         Squad mySquad = new Squad("keepers",5,"protect");
-        assertEquals(1,mySquad.findid());
+        assertEquals(1,mySquad.findBySquadId(1));
     }
     @Test
     public void clear_All(){
-        Squad.clear();
+        Squad.clearAllSquads();
     }
 }

@@ -1,52 +1,28 @@
 {{#partial "content"}}
-
-    <h2>Create Your Hero</h2>
-
-    <form action ="/post" method="Post">
-        <div class="row">
-            <div class="col-3">
-                <label for ="name">Name</label>
-                <input id ="name" class="form-control" name ="name" type="text">
+    <section class="landing">
+        <form class="form" action="/new/hero" method="post">
+            <h1>Create Your Hero</h1>
+            <div class="form-group">
+                <label>Hero's name</label>
+                <input type="text" placeholder="" name="name" required class="form-control">
             </div>
-            <div class="col-3">
-                <label for="age" >Age </label>
-                <input id="age" class="form-control" name ="age" type="text">
-            </div>
-            <div class="col-3">
-                <label for="powers" >Super power</label>
-                <input id="powers" class="form-control" name="powers" type="text">
-            </div>
-            <div class="col-3">
-                <label for="Weakness" >Weakness</label>
-                <input id="weakness" class="form-control" name="weakness" type="text">
-            </div>
+            <div class="form-group">
+                <label>Hero's age</label>
+                <input type="number" placeholder="" name="age" required class="form-control">
 
-            <div class="col-3">
-                <label for="squadid" >squadid</label>
-                <input id="squadId" class="form-control" name="squadid" type="number">
             </div>
-        </div>
+            <div class="form-group">
+                <label>Hero's Special_power</label>
+                <input type="text" placeholder="" name="power" required class="form-control">
 
-
-        <h2>Create Your Squad</h2>
-        <div class="row">
-            <div class="col-4">
-                <label for="squad">Squad name</label>
-                <input id="squad" class="form-control" name ="squad" type="text">
+            </div>
+            <div class="form-group">
+                <label>Hero's weakness</label>
+                <input type="text" placeholder="" name="weakness" required class="form-control">
             </div>
 
-            <div class="col-4">
-                <label for="size">size</label>
-                <input id="size" class="form-control" name ="size" type="number">
-            </div>
-
-            <div class="col-4">
-                <label for="cause">cause</label>
-                <input id="cause" class="form-control" name="cause" type="text">
-            </div>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">submit</button>
-    </form>
+            <input class="btns" type="submit">
+        </form>
+    </section>
 {{/partial}}
-{{>layout.hbs}}
+{{> layout.hbs}}

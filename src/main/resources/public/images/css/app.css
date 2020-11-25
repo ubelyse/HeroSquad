@@ -1,0 +1,33 @@
+.homepage{
+background: url('/images/wel.jpg') ;
+background-size:cover;
+height:100vh;
+}
+.card{
+ width: 320px;
+    padding: 20px;
+    background-color: rgba(245, 241, 237, 0.377);
+    height: 300px;
+}
+.sqd{
+background-color:rgb(217, 217, 217);
+background-size:cover;
+height:200vh;
+}
+h2,h1,h3,p{
+font-family: 'Sansita Swashed', cursive;
+}
+.h2cla{
+margin-left:50px;
+margin-top:50px;
+margin-bottom:50px;
+}
+.landing{
+background-color:rgb(217, 217, 217);
+height:200vh;
+}
+.sectpad{
+margin-bottom:100px;
+
+
+}

@@ -1,9 +1,11 @@
 {{#partial "content"}}
-    <h1>SUCCESS!</h1>
-    Your hero has been added.
-    <a href="/">Back to home page</a>
-    <br>
-    <a href="/add">Add  hero and squad</a>
+    <section class="homepage">
+        <div class="success" style="margin-left:100px;">
+            <h3 style="text-align:center;"><em>Success <br> <br> <span>{{ item }} </span> <br> Has been created successfully <br>{{sqId}}</em></h3>
 
-{{/partial }}
-{{>layout.hbs}}
+            <button style="margin-top:100px;align-item;center:"><a class="btn btn-success" href="/hero">View Heroes</a></button>
+            <button><a class="btn btn-success" href="/squad">View Squads</a></button>
+        </div>
+    </section>
+{{/partial}}
+{{> layout.hbs}}

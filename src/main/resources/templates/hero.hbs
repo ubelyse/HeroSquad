@@ -1,0 +1,23 @@
+{{#partial "content"}}
+    <section style="background-color:rgb(217, 217, 217);">
+        <div class="row">
+            <h2 style="text-align:center;"><a class="btn" href="/hero_form" >Create Your Hero</a><br><br></h2>
+        </div>
+        <div class="row" >
+            {{#each heroes}}
+                <div class="col-md-4"style="padding-bottom:40px;">
+                    <div class="card m-2">
+                        <p>Name: {{ myname }} </p>
+                        <p>Age: {{ myage }}</p>
+                        <p>Hero's power: {{ mypower }}</p>
+                        <p>Hero's Weakness: {{ myweakness }}</p>
+                        <p>Id: {{id}}</p>
+                        <a href="/squad" class="btn">Add {{ myname }} To Squad</a>
+                    </div>
+                </div>
+            {{/each}}
+
+        </div>
+    </section>
+{{/partial}}
+{{> layout.hbs}}
