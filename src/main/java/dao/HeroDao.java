@@ -3,30 +3,26 @@ package dao;
 import models.Hero;
 
 import java.util.List;
-
 public interface HeroDao {
 
 
-    // LIST
+    //LIST
     List<Hero> getAll();
 
+    //LIST
+    int getHeroesInSquad(int searchSquadId);
 
-    // CREATE
-
-    // READ
-    Hero findById(int id);
-
+    //CREATE
     void add(Hero hero);
 
-    // READ
-    /*static Hero findById(int id);*/
-
+    //READ
+    Hero findById(int id);
 
     //UPDATE
-    void update(int id, String name,int age,String power,String weakness, int categoryId);
+    void update(int id, String name, String weakness, String specialPower, int age, int squadId);
 
     //DELETE
     void deleteById(int id);
-    void clearAllTasks();
+    void clearAllHeroes();
 
 }
