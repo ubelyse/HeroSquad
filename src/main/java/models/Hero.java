@@ -45,4 +45,13 @@ public class Hero {
     public static ArrayList<Hero> getAllHeroes() {
         return myhero;
     }
+
+    public static void clearAllHeroes(){myhero.clear();
+    }
+    public int getId(){
+        return id;
+    }
+    public static Hero findById(int id) {
+        return myhero.get(id-1);
+    }
 }
