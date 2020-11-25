@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import models.Hero;
@@ -22,81 +23,50 @@ public class App {
         port(port);
         staticFileLocation("/public");
 
-        get("/success", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model,"index.hbs");
-        }, new HandlebarsTemplateEngine());
-
-        get("/hero-form",(req, res) ->{
+        //get :show neHero form
+        get("/hero", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "hero_form.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/hero",(req, res) ->{
-            Map<String, Object> model = new HashMap<>();
-            ArrayList<Hero> hero = Hero.getAllHeroes();
-            model.put("hero",hero);
-            return new ModelAndView(model, "hero.hbs");
+        //get:show all hero
+        get("/", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();  //displaying home
+            return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/squad-form",(req, res) ->{
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "squad_form.hbs");
+        //post:process new add form
+        post("/post", (request, response) -> {
+            Map<String, Object>model = new HashMap<>();
+            String name = request.queryParams("name");
+            int age = Integer.parseInt(request.queryParams("age"));
+            String powers = request.queryParams("powers");
+            String weakness = request.queryParams("weakness");
+            int squad = Integer.parseInt(request.queryParams("squadid"));
+            Hero newheros = new Hero(name, age, powers, weakness,squad);
+            model.put("heros", newheros);
+            return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/squad",(req, res) ->{
-            Map<String, Object> model = new HashMap<>();
+        post("/post", (request, response) -> {
+            Map<String, Object>model = new HashMap<>();
+            String name = request.queryParams("squad");
+            int size = Integer.parseInt(request.queryParams("size"));
+            String cause = request.queryParams("cause");
+            Squad squad = new Squad(name, size, cause);
+            model.put("squads", squad);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/detail", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();//displaying home
             ArrayList<Squad> squads = Squad.getInstances();
-            model.put("squads",squads);
-            ArrayList<Hero> members = Hero.getAllHeroes();
-            model.put("heroes",members);
-            Squad newSquad = Squad.findBySquadId(1);
-            model.put("allSquadMembers", newSquad.getSquadHero());
-            return new ModelAndView(model, "squad.hbs");
+            ArrayList<Hero> heros = Hero.getAllHeroes();
+            model.put("squads",squads );
+            model.put("heros", heros);
+            return new ModelAndView(model, "add-detail.hbs");
         }, new HandlebarsTemplateEngine());
 
-        post("/squad/new",(req,res)-> {
-            Map<String, Object> model = new HashMap<>();
-            String squadName = req.queryParams("squadName");
-            Integer size = Integer.parseInt(req.queryParams("size"));
-            String cause = req.queryParams("cause");
-            Squad newSquad = new Squad(squadName,size,cause);
-            req.session().attribute("item",squadName);
-            model.put("item",req.session().attribute("item"));
-            return new ModelAndView(model,"success.hbs");
-        }, new HandlebarsTemplateEngine());
 
-        post("/new/hero",(req, res) ->{
-            Map<String, Object> model = new HashMap<>();
-            String name = req.queryParams("name");
-            Integer age = Integer.parseInt(req.queryParams("age"));
-            String power = req.queryParams("power");
-            String weakness = req.queryParams("weakness");
-            Hero newHero = new Hero(name,age,power,weakness);
-            req.session().attribute("item",name);
-            model.put("item",req.session().attribute("item"));
-            model.put("newHero",newHero);
-            return new ModelAndView(model, "success.hbs");
-        }, new HandlebarsTemplateEngine());
-
-        get("/new/member/:squadId",(req,res)->{
-            Map<String, Object> model = new HashMap<>();
-            req.session().attribute("selectedSquad",req.params("sqid"));
-            model.put("selectedSquad", req.session().attribute("selectedSquad"));
-            model.put("item",1);
-            return new ModelAndView(model, "success.hbs");
-        },new HandlebarsTemplateEngine());
-
-        get("/squad/new/:id",(req,res)->{
-            Map<String, Object> model = new HashMap<>();
-            int id= Integer.parseInt(req.params(":id"));
-            Hero newMember = Hero.findById(id);
-            Squad newSquad = Squad.findBySquadId(1);
-            newSquad.setSquadHero(newMember);
-            model.put("item", newMember.getMyname());
-            model.put("newHero",newSquad.getMyname());
-            return new ModelAndView(model, "success.hbs");
-        }, new HandlebarsTemplateEngine());
     }
-
 }

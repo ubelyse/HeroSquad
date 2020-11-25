@@ -1,0 +1,26 @@
+{{#partial "content"}}
+    {{#if heros}}
+        {{#each heros}}
+            <div class="row">
+                <div class="col-6">
+                    <h3>Your hero:</h3>
+                    <p> Name:{{name}}</p>
+                    <p> Age:{{age}}</p>
+                    <p>Power:{{power}}</p>
+                    <p>Weakness:{{weakness}}</p>
+                    <p>SquadId: {{squadId}}</p>
+                </div>
+                <div class="col-6">
+                    <h3>Your squad:</h3>
+                    <p>Size:{{size}}</p>
+                    <p>Squad:{{squad}}</p>
+                    <p>Squad Mission:{{cause}}</p>
+                </div>
+            </div>
+        {{/each}}
+
+    {{else}}
+        <p>No squad or hero currently.</p>
+    {{/if}}
+{{/partial}}
+{{> layout.hbs}}

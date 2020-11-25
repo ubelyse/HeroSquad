@@ -42,15 +42,15 @@ public class SquadTest {
     @Test
     public void Squad_getSquadHero_Array() {
         Squad squad = new Squad("instrumental",10,"piano");
-        Hero hero = new Hero("belyse",30,"flying","fire");
-        Hero anotherhero = new Hero("inema",25,"cook","low");
+        Hero hero = new Hero("belyse",30,"flying","fire", 1);
+        Hero anotherhero = new Hero("inema",25,"cook","low", 2);
         squad.setSquadHero(hero);
         assertEquals("belyse",squad.getSquadHero().get(0).getMyname());
     }
 
     @Test
     public void Squad_allSquadHero_Array() {
-        Hero hero = new Hero("belyse",30,"flying","fire");
+        Hero hero = new Hero("belyse",30,"flying","fire", 1);
         Squad squad = new Squad("instrumental",10,"piano");
         squad.clearAllSquadHero();
         squad.getSquadHero().add(hero);
@@ -60,7 +60,7 @@ public class SquadTest {
 
     @Test
     public void Hero_addsHeroToSquad_Hero(){
-        Hero hero = new Hero("belyse",30,"flying","fire");
+        Hero hero = new Hero("belyse",30,"flying","fire", 1);
         Squad squad = new Squad("instrumental",10,"piano");
         Squad anothersquad = new Squad("Choir",50,"gospel");
         anothersquad.clearAllSquadHero();
