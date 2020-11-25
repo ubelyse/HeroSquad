@@ -6,5 +6,4 @@ import java.util.Objects;
 
 public class Squad {
 
-
 }
