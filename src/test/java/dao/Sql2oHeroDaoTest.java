@@ -12,13 +12,13 @@ import static org.junit.Assert.assertTrue;
 
 public class Sql2oHeroDaoTest {
 
-    private static  Sql2oHeroDao heroDao;
-    private static Connection conn;
+    private Sql2oHeroDao heroDao;
+    private  Connection conn;
 
-    @BeforeClass
-    public static void setUp() throws Exception {
-        String connectionString = "jdbc:postgresql://localhost:5432/herosquad_test";
-        Sql2o sql2o = new Sql2o(connectionString, "postgres", "password");
+    @Before
+    public  void setUp() throws Exception {
+        String connectionString = "jdbc:h2:mem:herosquad_test;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        Sql2o sql2o = new Sql2o(connectionString, "", "");
 
         heroDao = new Sql2oHeroDao(sql2o);
         conn = sql2o.open();
@@ -26,15 +26,9 @@ public class Sql2oHeroDaoTest {
 
     @After
     public void tearDown() throws Exception {
-        System.out.println("clearing batabase");
-        heroDao.clearAllHeroes();
+       conn.close();
     }
 
-    @AfterClass
-    public static void shutdown() throws Exception {
-        conn.close();
-        System.out.println("connection closed");
-    }
 
     @Test
     public void addingHeroSetsId() throws Exception {

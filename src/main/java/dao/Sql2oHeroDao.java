@@ -14,7 +14,7 @@ public class Sql2oHeroDao implements HeroDao {  //implementing our interface
 
     @Override
     public void add(Hero hero) {
-        String sql = "INSERT INTO heroes (name, weakness, specialPower, age, squadId) VALUES (:name, :weakness, :specialPower, :age, :squadId)";    //raw sql
+        String sql = "INSERT INTO hero (name, weakness, power, age, squadId) VALUES (:name, :weakness, :power, :age, :squadId)";    //raw sql
         try (Connection con = sql2o.open()) {    //opening a connection
             int id = (int) con.createQuery(sql, true)   //make new variable
                     .bind(hero)
@@ -29,7 +29,7 @@ public class Sql2oHeroDao implements HeroDao {  //implementing our interface
     @Override
     public int getHeroesInSquad(int searchSquadId) {
         try(Connection con = sql2o.open()) {
-            String sql = "SELECT * FROM heroes WHERE squadId = :searchSquadId";
+            String sql = "SELECT * FROM hero WHERE squadId = :searchSquadId";
             return con.createQuery(sql)
                     .addParameter("searchSquadId", searchSquadId)
                     .executeAndFetch(Hero.class).size();
@@ -39,7 +39,7 @@ public class Sql2oHeroDao implements HeroDao {  //implementing our interface
     @Override
     public List<Hero> getAll() {
         try (Connection con = sql2o.open()) {
-            return con.createQuery("SELECT * FROM heroes") //raw sql
+            return con.createQuery("SELECT * FROM hero") //raw sql
                     .executeAndFetch(Hero.class);   //fetch a list
         }
     }
@@ -47,7 +47,7 @@ public class Sql2oHeroDao implements HeroDao {  //implementing our interface
     @Override
     public Hero findById(int id) {
         try (Connection con = sql2o.open()) {
-            return con.createQuery("SELECT * FROM heroes WHERE id = :id")
+            return con.createQuery("SELECT * FROM hero WHERE id = :id")
                     .addParameter("id", id) //key/value pair, key must match above
                     .executeAndFetchFirst(Hero.class);  //fetch an individual item
         }
@@ -55,7 +55,7 @@ public class Sql2oHeroDao implements HeroDao {  //implementing our interface
 
     @Override
     public void update(int id, String newName, String newWeakness, String newSpecialPower, int newAge, int newSquadId) {
-        String sql = "UPDATE heroes SET (name, weakness, specialPower, age, squadId) = (:name, :weakness, :specialPower, :age, :squadId) WHERE id =:id";    //raw sql
+        String sql = "UPDATE hero SET (name, weakness, specialPower, age, squadId) = (:name, :weakness, :specialPower, :age, :squadId) WHERE id =:id";    //raw sql
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("name", newName)
@@ -72,7 +72,7 @@ public class Sql2oHeroDao implements HeroDao {  //implementing our interface
 
     @Override
     public void deleteById(int id){
-        String sql = "DELETE from heroes WHERE id = :id";
+        String sql = "DELETE from hero WHERE id = :id";
         try(Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("id", id)
@@ -84,7 +84,7 @@ public class Sql2oHeroDao implements HeroDao {  //implementing our interface
 
     @Override
     public void clearAllHeroes(){
-        String sql = "DELETE from heroes";
+        String sql = "DELETE from hero";
         try(Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .executeUpdate();

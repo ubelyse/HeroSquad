@@ -1,17 +1,14 @@
 {{#partial "content"}}
-    <section class="homepage">
-        <div class="">
-        </div>
-        <div class="">
-        </div>
 
-        <div class="hero-desc"style="text-align:center;">
-            <h4 style="padding-top:50px;color:blue;"><em>WELCOME TO HEROES SQUAD</em></h4>
-            <a class="navbar-brand" href="/">
-                <h3 style="margin-top:100px;"><em>WELCOME TO OUR SITE</em>
-                </h3></a><br>
-            <a href="/hero"><button class="hero-btn btns">Create Hero</button></a>
-        </div>
-    </section>
+    <h1>List of heroes!</h1>
+
+    {{#if hero}}
+        {{#each hero}}
+            <p><a href="/squad/{{squadId}}/heroe/{{id}}">{{name}}</a></p>
+        {{/each}}
+    {{else}}
+        <p>No heroes available!</p>
+    {{/if}}
 {{/partial}}
+
 {{> layout.hbs}}

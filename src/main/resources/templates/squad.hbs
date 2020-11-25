@@ -1,53 +1,21 @@
 {{#partial "content"}}
-    <section class="sqd">
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-4 ">
-                <a class="btn" href="/squad_form" style="font-size:25px;">Create Your Squad</a>
-                <div class="card m-2"style="height:350px;">
-                    <div id="newMember">
-                        {{#each heroes}}
-                            <div class="hero-item">
-                                <div class="hero-info">
-                                    <p>Name: {{myname}}</p>
-                                    <p>Super power: {{ mypower }}</p>
-                                    <a class="btns" href="/squad/newMember/{{id}}">Add To Squad</a>
-                                </div>
-                            </div>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-        <div class="col-md-4">
-            {{#if squads}}
-                <h2> Squad available</h2>
-                {{#each squads}}
-                    <div class="card m-2"style="height:350px;">
-                        <h1>{{ myname }} </h1>
-                        <p>Id: {{squadId}}</p>
-                        <p>Cause: {{mycause}}</p>
-                        <p>Max participants: {{ mysize }}</p>
-                        <br><br>
-                        <h3> New Member</h3>
-                        {{#each squadMembers}}
-                            <div>
-                                <h5>Name: {{this.myname}}</h5>
-                                <h5>Power: {{mypower}}</h5>
-                            </div>
-                        {{/each}}
-                    </div>
-                </div>
-                {{/each}}
-            {{else}}
-                <h2>Please create a squad to continue</h2>
-            {{/if}}
-        </div>
-        </div>
-    </section>
+    <div class="container">
+        <h1>{{squad.squadName}}</h1>
+        <!--    Add squadMembersCounter here-->
+        <h3>This squad should have {{squad.max_size}} members.Current count is {{current}}</h3>
+        <h3>{{notFull}}{{full}}</h3>
+        <p>Here are the heroes listed in this squad:</p>
+        <ul>
+            {{#each hero}}
+                <li>
+                    <p><a href="/squad/{{squad.id}}/hero/{{id}}">{{name}}</a></p>
+                </li>
+            {{/each}}
+        </ul>
+        <a href="/squad/{{squad.id}}/edit" style="color:green;">Edit this squad</a><br>
+        <a href="/squad/{{squad.id}}/delete" style="color:red;">Delete this squad</a>
+    </div>
+
 {{/partial}}
-{{#partial "footer"}}
-    <script type="text/javascript" src="/js/jquery-3.4.0.min.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
-{{/partial}}
+
 {{> layout.hbs}}

@@ -46,7 +46,7 @@ public class Sql2oSquadDao implements  SquadDao {
 
     @Override
     public void update(int id, String newSquadName, String cause, int max_size){
-        String sql = "UPDATE squad SET (squadName, cause, max_size) VALUES (:squadName, :cause, :max_size) WHERE id = :id";
+        String sql = "UPDATE squad SET (squadName, cause, max_size)=(:squadName, :cause, :max_size) WHERE id =:id";
         try(Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("squadName", newSquadName)

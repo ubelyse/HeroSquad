@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS hero (
 
 CREATE TABLE IF NOT EXISTS squad (
   id int PRIMARY KEY auto_increment,
-  name VARCHAR,
+  squadName VARCHAR,
   cause varchar,
   max_size int,
 );
