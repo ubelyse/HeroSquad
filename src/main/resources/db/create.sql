@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS hero (
   age int,
   power varchar,
   weakness varchar,
-  squad INTEGER
+  squadId INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS squad (

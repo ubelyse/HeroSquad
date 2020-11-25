@@ -1,7 +1,0 @@
-package dao;
-
-import static org.junit.Assert.*;
-
-public class sql2oHerodaoTest {
-
-}
