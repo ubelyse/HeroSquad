@@ -8,32 +8,31 @@ import static org.junit.Assert.*;
 
 public class HeroTest {
 
-    //Testing the Whole Class
     @Test
-    public void HeroCorrectlyCreated_true() throws Exception {
+    public void NewHeroObjectGetsCorrectlyCreated_true() throws Exception {
         Hero hero = setUpNewHero();
         assertEquals(true, hero instanceof Hero);
     }
 
     @Test
-    public void HeroProperties_true() throws Exception {
+    public void HeroInstantiatesWithProperties_true() throws Exception {
         Hero hero = setUpNewHero();
-        assertEquals("belyse", hero.getName());
-        assertEquals("vision", hero.getWeakness());
-        assertEquals("cooking", hero.getPower());
-        assertEquals(20, hero.getAge());
+        assertEquals("super man", hero.getName());
+        assertEquals("kryptonite", hero.getWeakness());
+        assertEquals("x-ray vision", hero.getPower());
+        assertEquals(30, hero.getAge());
         assertEquals(1, hero.getSquadId());
     }
 
-    //Time created
     @Test
-    public void HeroWithCurrentTimeToday() throws Exception{
+    public void getCreatedAtInstantiatesWithCurrentTimeToday() throws Exception{
         Hero hero = setUpNewHero();
         assertEquals(LocalDateTime.now().getDayOfWeek(), hero.getCreatedAt().getDayOfWeek());
     }
 
     //helper method
     public Hero setUpNewHero(){
-        return new Hero("belyse", "vision", "cooking", 20, 1);
+        return new Hero("super man", "kryptonite", "x-ray vision", 30, 1);
     }
+
 }

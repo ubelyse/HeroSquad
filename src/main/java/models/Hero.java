@@ -14,10 +14,10 @@ public class Hero {
     private int age;
     private int id;
 
-    public Hero(String name, String weakness, String power, int age, int squadId){
+    public Hero(String name, String weakness, String specialPower, int age, int squadId){
         this.name = name;
         this.weakness = weakness;
-        this.power = power;
+        this.power = specialPower;
         this.age = age;
         this.squadId = squadId;
         this.createdAt = LocalDateTime.now();
@@ -39,7 +39,7 @@ public class Hero {
         this.age = age;
     }
 
-    public void setSpecialPower(String specialPower){
+    public void setPower(String specialPower){
         this.power = specialPower;
     }
 
@@ -78,17 +78,17 @@ public class Hero {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Hero)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Hero hero = (Hero) o;
 
         if (squadId != hero.squadId) return false;
         if (age != hero.age) return false;
         if (id != hero.id) return false;
-        if (name != null ? !name.equals(hero.name) : hero.name != null) return false;
-        if (weakness != null ? !weakness.equals(hero.weakness) : hero.weakness != null) return false;
-        if (power != null ? !power.equals(hero.power) : hero.power != null) return false;
-        return createdAt != null ? createdAt.equals(hero.createdAt) : hero.createdAt == null;
+        if (!Objects.equals(name, hero.name)) return false;
+        if (!Objects.equals(weakness, hero.weakness)) return false;
+        if (!Objects.equals(power, hero.power)) return false;
+        return Objects.equals(createdAt, hero.createdAt);
     }
 
     @Override

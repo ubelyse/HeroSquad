@@ -1,28 +1,28 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>{{#block "title"}}Hero Squad{{/block}}</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
 <ul class="nav nav-tabs">
     <li role="presentation" ><a href="/">Home</a></li>
-    <li role="presentation" ><a href="/hero/new">Add a New Hero</a></li>
+    <li role="presentation" ><a href="/heroes/new">Add a New Hero</a></li>
 
-    <li role="presentation" cla
+    <li role="presentation"
         class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
             Squad Menu <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-            {{#if squad}}
-                {{#each squad}}
-                    <li><a href="/squad/{{id}}">{{squadName}}</a></li>
+            {{#if squads}}
+                {{#each squads}}
+                    <li><a href="/squads/{{id}}">{{squadName}}</a></li>
                 {{/each}}
-                <li><a href="/squad/new">Add a Squad</a></li>
+                <li><a href="/squads/new">Add a Squad</a></li>
             {{else}}
-                <li><a href="/squad/new">Add a Squad</a></li>
+                <li><a href="/squads/new">Add a Squad</a></li>
             {{/if}}
         </ul>
     </li>
@@ -31,24 +31,22 @@
 <div class="container">
     <!--begin main template-->
     <div class="page-header">
-        <img src="/images/wel.jpg" width="70%" height="50%">
-        <h1>Welcome to my Hero-Squad site.</h1>
+        <h1 class="text-center"><strong>WELCOME TO HEROSQUAD.</strong></h1>
+        <img src="/images/nice.jpg" width="100%" height="100%">
     </div>
 
     <div class="col-md-12">
-        {{#block "content"}}
-        {{/block}}
-
+        {{#block "content"}} {{/block}}
     </div>
 </div>
 <!--end main template-->
 {{#block "footer"}}
     <footer class="footer">
-        <div class="container">
+        <div class="container text-center">
             <hr>
             <p class="text-muted">
-                <a href="/squad/delete" style="color:red;">Delete all squads & heroes</a><br>
-                <a href="/hero/delete" style="color:red;">Delete all heroes</a>
+                <a href="/squads/delete" style="color:red;">Delete all squads & heroes</a><br>
+                <a href="/heroes/delete" style="color:red;">Delete all heroes</a>
             </p>
         </div>
     </footer>

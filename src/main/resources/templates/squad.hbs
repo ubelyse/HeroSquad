@@ -1,19 +1,19 @@
 {{#partial "content"}}
     <div class="container">
         <h1>{{squad.squadName}}</h1>
-        <!--    Add squadMembersCounter here-->
+
         <h3>This squad should have {{squad.max_size}} members.Current count is {{current}}</h3>
         <h3>{{notFull}}{{full}}</h3>
         <p>Here are the heroes listed in this squad:</p>
         <ul>
-            {{#each hero}}
+            {{#each heroes}}
                 <li>
-                    <p><a href="/squad/{{squad.id}}/hero/{{id}}">{{name}}</a></p>
+                    <p><a href="/squads/{{squad.id}}/heroes/{{id}}">{{name}}</a></p>
                 </li>
             {{/each}}
         </ul>
-        <a href="/squad/{{squad.id}}/edit" style="color:green;">Edit this squad</a><br>
-        <a href="/squad/{{squad.id}}/delete" style="color:red;">Delete this squad</a>
+        <a href="/squads/{{squad.id}}/edit" style="color:green;">Edit this squad</a><br>
+        <a href="/squads/{{squad.id}}/delete" style="color:red;">Delete this squad</a>
     </div>
 
 {{/partial}}

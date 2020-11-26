@@ -2,9 +2,11 @@ package dao;
 
 import models.Squad;
 import models.Hero;
+
 import java.util.List;
 
 public interface SquadDao {
+
 
     //LIST
     List<Squad> getAll();
@@ -17,7 +19,7 @@ public interface SquadDao {
     List<Hero> getAllHeroesBySquad(int squadId);
 
     //UPDATE
-    void update(int id, String squadName, String cause, int max_size);
+    void update(int id, String squadName, String causeDedicatedToFighting, int squadSize);
 
     //DELETE
     void deleteById(int id);

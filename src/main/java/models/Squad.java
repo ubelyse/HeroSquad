@@ -4,15 +4,16 @@ package models;
 import java.util.Objects;
 
 public class Squad {
+
     private String squadName;
     private String cause;
     private int id;
     private int max_size;
 
-    public Squad(String squadName, String cause, int max_size){
+    public Squad(String squadName, String causededicated, int squadMembersCounter){
         this.squadName = squadName;
-        this.cause = cause;
-        this.max_size = max_size;
+        this.cause = causededicated;
+        this.max_size = squadMembersCounter;
     }
 
     public String getSquadName(){
@@ -33,12 +34,10 @@ public class Squad {
         this.squadName = squadName;
     }
 
-    public void setMax_size(int max_size){
-        this.max_size = max_size;
-    }
+    public void setMax_size(int squadMembersCounter){this.max_size = squadMembersCounter;}
 
-    public void setCause(String cause){
-        this.cause = cause;
+    public void setCause(String causededicated){
+        this.cause = causededicated;
     }
 
     public void setId(int id){
@@ -66,5 +65,4 @@ public class Squad {
         result = 31 * result + max_size;
         return result;
     }
-
 }

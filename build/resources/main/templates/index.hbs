@@ -2,9 +2,9 @@
 
     <h1>List of heroes!</h1>
 
-    {{#if hero}}
-        {{#each hero}}
-            <p><a href="/squad/{{squadId}}/heroe/{{id}}">{{name}}</a></p>
+    {{#if heroes}}
+        {{#each heroes }}
+            <p><a href="/squads/{{squadId}}/heroes/{{id}}">{{name}}</a></p>
         {{/each}}
     {{else}}
         <p>No heroes available!</p>

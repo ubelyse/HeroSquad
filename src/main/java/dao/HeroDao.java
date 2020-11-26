@@ -1,16 +1,15 @@
 package dao;
 
 import models.Hero;
-
 import java.util.List;
-public interface HeroDao {
 
+public interface HeroDao {
 
     //LIST
     List<Hero> getAll();
 
     //LIST
-    int getHeroesInSquad(int searchSquadId);
+    int getNumberOfHeroesInTheSameSquad(int searchSquadId);
 
     //CREATE
     void add(Hero hero);
@@ -19,10 +18,11 @@ public interface HeroDao {
     Hero findById(int id);
 
     //UPDATE
-    void update(int id, String name, String weakness, String power, int age, int squadId);
+    void update(int id, String name, String weakness, String specialPower, int age, int squadId);
 
     //DELETE
     void deleteById(int id);
     void clearAllHeroes();
 
 }
+
