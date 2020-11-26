@@ -21,7 +21,7 @@ Belyse Inema
 * psql
 
 ## Scrrenshot of The Page
-![HeroSquad](/images/Heros.png)
+![HeroSquad](/public/images/Heros.png)
 
 ## Known Bugs
 no bugs yet
