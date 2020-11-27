@@ -1,105 +1,45 @@
 package models;
-
-import java.time.LocalDateTime;
+import javax.swing.text.html.HTMLWriter;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Objects;
-
 public class Hero {
 
     private String name;
-    private String weakness;
-    private int squadId;
-    private String power;
-    private LocalDateTime createdAt;
     private int age;
+    private String power;
+    private String weakness;
     private int id;
+    private static ArrayList<Hero> instances = new ArrayList<>();
 
-    public Hero(String name, String weakness, String specialPower, int age, int squadId){
+    public Hero(String name, Integer age, String power, String weakness) {
         this.name = name;
-        this.weakness = weakness;
-        this.power = specialPower;
         this.age = age;
-        this.squadId = squadId;
-        this.createdAt = LocalDateTime.now();
-    }
-
-    public int getSquadId() {
-        return squadId;
-    }
-
-    public void setSquadId(int squadId) {
-        this.squadId = squadId;
-    }
-
-    public void setWeakness(String weakness){
+        this.power = power;
         this.weakness = weakness;
+        instances.add(this);
+        this.id = instances.size();
     }
 
-    public void setAge(int age){
-        this.age = age;
+    public String getName() {return this.name;}
+    //    public String getCv() {
+//        String cv = this.name && this.power;
+//    }
+    public int getAge() {return this.age;}
+    public String getPower() {return this.power;}
+    public String getWeakness() {return this.weakness;}
+    public static ArrayList<Hero> getAllInstances() {return instances;}
+    public static void clearAllHeroes(){instances.clear();}
+    public int getId(){return id;}
+    public static Hero findById(int id) {return instances.get(id-1);}
+
+    public static Hero setUpNewHero(){
+        return new Hero("belyse",23,"good","bad");
+    }
+    public static Hero setUpNewHero1(){
+        return new Hero("inema",25,"money","poor");
+    }
+    public static Hero setUpNewHero2(){
+        return new Hero("bebe",30,"dark","Light");
     }
 
-    public void setPower(String specialPower){
-        this.power = specialPower;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge(){
-        return age;
-    }
-
-    public String getPower(){
-        return power;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public  String getWeakness(){
-        return weakness;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Hero hero = (Hero) o;
-
-        if (squadId != hero.squadId) return false;
-        if (age != hero.age) return false;
-        if (id != hero.id) return false;
-        if (!Objects.equals(name, hero.name)) return false;
-        if (!Objects.equals(weakness, hero.weakness)) return false;
-        if (!Objects.equals(power, hero.power)) return false;
-        return Objects.equals(createdAt, hero.createdAt);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (weakness != null ? weakness.hashCode() : 0);
-        result = 31 * result + squadId;
-        result = 31 * result + (power != null ? power.hashCode() : 0);
-        result = 31 * result + (createdAt != null ? createdAt.hashCode() : 0);
-        result = 31 * result + age;
-        result = 31 * result + id;
-        return result;
-    }
 }

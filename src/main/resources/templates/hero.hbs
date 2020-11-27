@@ -1,26 +1,23 @@
 {{#partial "content"}}
+    <section class="landing-pg">
+        <div class="land-left">
+        </div>
+        <div class="land-right">
+        </div>
+        <h2> <a class="btns" href="/hero_form" >Create Your Hero</a> <br><br> CURRENT HEROES</h2>
+        <div class="heroes">
+            {{#each hero}}
+                <div class="hero-item">
+                    <p>Name: {{ name }} </p>
+                    <p>Age: {{ age }}</p>
+                    <p>Special power: {{ power }}</p>
+                    <p>Weakness: {{ weakness }}</p>
+                    <p>Id: {{ id }}</p>
+                    <a href="/squad" class="btns">Add {{ name }} To Squad</a>
+                </div>
 
-    <div class="container">
-        <p>Hero name:{{hero.name}}</p>
-        <p>Special power:{{hero.power}}</p>
-        <p>Weakness:{{hero.weakness}}</p>
-        <p>Squad for hero:{{hero.name}} is:{{squad.squadName}}</p>
-        <p>Age:{{hero.age}}</p>
-        <h5>
-            Hero status:
-            {{#if hero.published }}
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>  Completed
-            {{else}}
-                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Available
-            {{/if}}
-        </h5>
-        <p>
-            <a href="/heroes/{{hero.id}}/edit" style="color:green;">Edit this hero</a><br>
-            <a href="/squads/{{hero.squadId}}/heroes/{{hero.id}}/delete" style="color:red;">Delete this hero!</a>
-        </p>
-    </div>
-
-
+            {{/each}}
+        </div>
+    </section>
 {{/partial}}
-
 {{> layout.hbs}}

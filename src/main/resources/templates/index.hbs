@@ -1,14 +1,15 @@
 {{#partial "content"}}
-
-    <h1>List of heroes!</h1>
-
-    {{#if heroes}}
-        {{#each heroes }}
-            <p><a href="/squads/{{squadId}}/heroes/{{id}}">{{name}}</a></p>
-        {{/each}}
-    {{else}}
-        <p>No heroes available!</p>
-    {{/if}}
+    <section class="landing-pg">
+        <div class="land-left">
+        </div>
+        <div class="land-right">
+        </div>
+        <div class="hero-img">
+        </div>
+        <div class="hero-desc">
+            <h3>Let's Make You  a Hero</h3>
+            <a href="/hero_form"><button class="hero-btn btns">Create Hero</button></a>
+        </div>
+    </section>
 {{/partial}}
-
 {{> layout.hbs}}

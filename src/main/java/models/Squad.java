@@ -1,68 +1,41 @@
 package models;
-
-
-import java.util.Objects;
+import java.net.HttpRetryException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Squad {
-
+    private int squadId;
     private String squadName;
+    private int squadSize;
     private String cause;
-    private int id;
-    private int max_size;
+    private ArrayList<Hero>  squadMembers = new ArrayList<>();
+    private static ArrayList<Squad> instances = new ArrayList<>();
 
-    public Squad(String squadName, String causededicated, int squadMembersCounter){
-        this.squadName = squadName;
-        this.cause = causededicated;
-        this.max_size = squadMembersCounter;
+
+    public Squad(String name, int size, String cause ){
+        squadName = name;
+        squadSize = size;
+        this.cause = cause;
+        this.squadMembers = new ArrayList<>();
+        instances.add(this);
+        this.squadId = instances.size();
+
     }
-
-    public String getSquadName(){
-        return squadName;
+    public int getSquadId(){return squadId;}
+    public static Squad findBySquadId(int id) {return instances.get(id-1);}
+    public String getSquadName() {return squadName;}
+    public int getSize() {return squadSize;}
+    public String getCause() {return this.cause;}
+    public static ArrayList<Squad> getInstances(){return instances;}
+    public ArrayList<Hero> getSquadMembers(){
+        return squadMembers;
     }
-
-    public String getCause(){
-        return cause;
+    public void setSquadMembers(Hero newMember) {
+        squadMembers.add(newMember);
     }
+    public static void clearAllSquads(){ instances.clear(); }
+    public void clearAllSquadMembers(){ getSquadMembers().clear(); }
 
-    public int getMax_size() {return max_size;}
-
-    public int getId(){
-        return id;
-    }
-
-    public void setSquadName(String squadName){
-        this.squadName = squadName;
-    }
-
-    public void setMax_size(int squadMembersCounter){this.max_size = squadMembersCounter;}
-
-    public void setCause(String causededicated){
-        this.cause = causededicated;
-    }
-
-    public void setId(int id){
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Squad squad = (Squad) o;
-
-        if (id != squad.id) return false;
-        if (max_size != squad.max_size) return false;
-        if (!Objects.equals(squadName, squad.squadName)) return false;
-        return Objects.equals(cause, squad.cause);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = squadName != null ? squadName.hashCode() : 0;
-        result = 31 * result + (cause != null ? cause.hashCode() : 0);
-        result = 31 * result + id;
-        result = 31 * result + max_size;
-        return result;
-    }
+    public static Squad setUpNewSquad(){return new Squad("Musical",10,"Songs");}
+    public static Squad setUpNewSquad1(){return new Squad("Instrumental",20,"Piano");}
 }
